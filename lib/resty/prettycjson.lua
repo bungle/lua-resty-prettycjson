@@ -8,8 +8,7 @@ return function(tbl, lf, id, ac)
     local s, e = json(tbl)
     if not s then return s, e end
     lf, id, ac = lf or "\n", id or "\t", ac or " "
-    local i, j, k  = 1, 0, 0
-    local r, p = {}, nil
+    local i, j, k, r, p  = 1, 0, 0, {}, nil
     local al = sub(ac, -1) == "\n"
     for c in gmatch(s, ".") do
         if c == "{" or c == "[" then
