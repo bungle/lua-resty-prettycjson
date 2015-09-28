@@ -1,4 +1,4 @@
-# lua-resty-libcjson
+# lua-resty-prettycjson
 
 `lua-resty-prettycjson` is a JSON Pretty Formatter for Lua cJSON.
 
@@ -9,7 +9,7 @@ somewhere in your `package.path`, preferably under `resty` directory. If you are
 would be `/usr/local/openresty/lualib/resty`.
 
 ## Lua API
-#### string funtion(tbl, linefeed, indent, after_colon)
+#### string funtion(tbl, [linefeed = "\n", [indent = "\t", [after_colon = " "]]])
 
 Pretty formats the cJSON output.
 
