@@ -16,20 +16,20 @@ return function(tbl, linefeed, indent, after_colon)
     local ac = after_colon or " "
     local al = sub(ac, -1) == "\n"
     for c in gmatch(s, ".") do
-        if c == "{" then
+        if c == "{" or c == "[" then
             if p == ":" then
-                r[i] = concat{ "{", lf }
+                r[i] = concat{ c, lf }
             else
-                r[i] = concat{ rep(id, j), "{", lf }
+                r[i] = concat{ rep(id, j), c, lf }
             end
             j = j + 1
-        elseif c == "}" then
+        elseif c == "}" or c == "]" then
             j = j - 1
-            if p == "{" then
+            if p == "{" or p == "[" then
                 i = i - 1
-                r[i] = concat{ rep(id, j), "{}" }
+                r[i] = concat{ rep(id, j), p, c }
             else
-                r[i] = concat{ lf, rep(id, j), "}" }
+                r[i] = concat{ lf, rep(id, j), c }
             end
         elseif c == "," then
             r[i] = concat{ ",", lf }
@@ -39,21 +39,6 @@ return function(tbl, linefeed, indent, after_colon)
             if al then
                 i = i + 1
                 r[i] = rep(id, j)
-            end
-        elseif c == "[" then
-            if p == ":" then
-                r[i] = concat{ "[", lf }
-            else
-                r[i] = concat{ rep(id, j), "[", lf }
-            end
-            j = j + 1
-        elseif c == "]" then
-            j = j - 1
-            if p == "[" then
-                i = i - 1
-                r[i] = concat{ rep(id, j), "[]" }
-            else
-                r[i] = concat{ lf, rep(id, j), "]" }
             end
         else
             if j ~= k then
