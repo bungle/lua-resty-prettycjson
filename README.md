@@ -1,6 +1,6 @@
 # lua-resty-prettycjson
 
-`lua-resty-prettycjson` is a JSON Pretty Formatter for Lua cJSON.
+`lua-resty-prettycjson` is a JSON Pretty Formatter for [Lua cJSON](http://www.kyne.com.au/~mark/software/lua-cjson.php).
 
 ## Installation
 
