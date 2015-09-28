@@ -8,10 +8,30 @@ Just place [`prettycjson.lua`](https://github.com/bungle/lua-resty-prettycjson/b
 somewhere in your `package.path`, preferably under `resty` directory. If you are using OpenResty, the default location
 would be `/usr/local/openresty/lualib/resty`.
 
+### Using LuaRocks or MoonRocks
+
+If you are using LuaRocks >= 2.2:
+
+```Shell
+$ luarocks install lua-resty-prettycjson
+```
+
+If you are using LuaRocks < 2.2:
+
+```Shell
+$ luarocks install --server=http://rocks.moonscript.org moonrocks
+$ moonrocks install lua-resty-prettycjson
+```
+
+MoonRocks repository for `lua-resty-prettycjson`  is located here: https://rocks.moonscript.org/modules/bungle/lua-resty-prettycjson.
+
 ## Lua API
 #### string funtion(tbl, [linefeed = "\n", [indent = "\t", [after_colon = " "]]])
 
-Pretty formats the cJSON output.
+Pretty formats the cJSON output. You may pass `linefeed` if you want to use different linefeed
+than the default `\n`. If you want to indent with something else than `\t` (a tab) you can pass
+that as arguments as well. And if you want to have something else than ` ` (single space) after
+colons `:` in json, you can change that as well, try for example `\n`.
 
 ##### Example
 
