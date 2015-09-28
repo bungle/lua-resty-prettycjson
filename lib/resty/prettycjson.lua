@@ -49,7 +49,12 @@ return function(tbl, linefeed, indent, after_colon)
             j = j + 1
         elseif c == "]" then
             j = j - 1
-            r[i] = concat{ lf, rep(id, j), "]" }
+            if p == "[" then
+                i = i - 1
+                r[i] = concat{ rep(id, j), "[]" }
+            else
+                r[i] = concat{ lf, rep(id, j), "]" }
+            end
         else
             if j ~= k then
                 r[i] = concat{ rep(id, j) }
