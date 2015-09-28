@@ -98,7 +98,7 @@ That will output:
 
 ## License
 
-`lua-resty-libcjson` uses three clause BSD license.
+`lua-resty-prettycjson` uses three clause BSD license.
 
 ```
 Copyright (c) 2015, Aapo Talvensaari
