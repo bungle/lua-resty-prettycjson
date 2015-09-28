@@ -32,10 +32,10 @@ return function(tbl, linefeed, indent, after_colon)
                 r[i] = concat{ lf, rep(id, j), c }
             end
         elseif c == "," then
-            r[i] = concat{ ",", lf }
+            r[i] = concat{ c, lf }
             k = -1
         elseif c == ":" then
-            r[i] = concat{ ":", ac }
+            r[i] = concat{ c, ac }
             if al then
                 i = i + 1
                 r[i] = rep(id, j)
