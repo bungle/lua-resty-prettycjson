@@ -42,7 +42,7 @@ return function(tbl, linefeed, indent, after_colon)
             end
         else
             if j ~= k then
-                r[i] = concat{ rep(id, j) }
+                r[i] = rep(id, j)
                 i = i + 1
                 k = j
             end
