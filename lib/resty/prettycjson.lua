@@ -1,9 +1,9 @@
-local json = require "cjson.safe".encode
-local concat = table.concat
+local enc = require "cjson.safe".encode
+local cat = table.concat
 local sub = string.sub
 local rep = string.rep
 return function(tbl, lf, id, ac)
-    local s, e = json(tbl)
+    local s, e = enc(tbl)
     if not s then return s, e end
     lf, id, ac = lf or "\n", id or "\t", ac or " "
     local i, j, k, n, r, p, q  = 1, 0, 0, #s, {}, nil, nil
@@ -11,21 +11,21 @@ return function(tbl, lf, id, ac)
     for x = 1, n do
         local c = sub(s, x, x)
         if not q and (c == "{" or c == "[") then
-            r[i] = p == ":" and concat{ c, lf } or concat{ rep(id, j), c, lf }
+            r[i] = p == ":" and cat{ c, lf } or cat{ rep(id, j), c, lf }
             j = j + 1
         elseif not q and (c == "}" or c == "]") then
             j = j - 1
             if p == "{" or p == "[" then
                 i = i - 1
-                r[i] = concat{ rep(id, j), p, c }
+                r[i] = cat{ rep(id, j), p, c }
             else
-                r[i] = concat{ lf, rep(id, j), c }
+                r[i] = cat{ lf, rep(id, j), c }
             end
         elseif not q and c == "," then
-            r[i] = concat{ c, lf }
+            r[i] = cat{ c, lf }
             k = -1
         elseif not q and c == ":" then
-            r[i] = concat{ c, ac }
+            r[i] = cat{ c, ac }
             if al then
                 i = i + 1
                 r[i] = rep(id, j)
@@ -48,5 +48,5 @@ return function(tbl, lf, id, ac)
         end
         p, i = c, i + 1
     end
-    return concat(r)
+    return cat(r)
 end
