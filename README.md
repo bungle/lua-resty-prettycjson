@@ -26,7 +26,7 @@ $ moonrocks install lua-resty-prettycjson
 MoonRocks repository for `lua-resty-prettycjson`  is located here: https://rocks.moonscript.org/modules/bungle/lua-resty-prettycjson.
 
 ## Lua API
-#### string funtion(tbl, [linefeed = "\n", [indent = "\t", [after_colon = " "]]])
+#### string function(tbl, [linefeed = "\n", [indent = "\t", [after_colon = " "]]])
 
 Pretty formats the cJSON output. You may pass `linefeed` if you want to use different linefeed
 than the default `\n`. If you want to indent with something else than `\t` (a tab) you can pass
