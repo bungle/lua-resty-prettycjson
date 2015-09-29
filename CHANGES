@@ -5,6 +5,11 @@ Changes with lua-resty-prettycjson 1.2                             29 Sep 2015
 
        Thanks @irmiab
 
+    *) Change: uses now string.len / string.sub instead of string.gmatch
+       See also: https://github.com/bungle/lua-resty-prettycjson/pull/1
+
+       Thanks @antonheryanto
+
 Changes with lua-resty-prettycjson 1.1                             29 Sep 2015
 
     *) Change: Removed unneccessary concat call
