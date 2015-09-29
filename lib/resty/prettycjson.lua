@@ -10,8 +10,10 @@ return function(tbl, lf, id, ac)
     lf, id, ac = lf or "\n", id or "\t", ac or " "
     local i, j, k, r, p, q  = 1, 0, 0, {}, nil, nil
     local al = sub(ac, -1) == "\n"
-    for c in gmatch(s, ".") do
-        if not q and (c == "{" or c == "[") then
+    local n = len(s)
+    for x = 1, n do
+        local c = sub(s, x, x)
+        if c == "{" or c == "[" then
             r[i] = p == ":" and concat{ c, lf } or concat{ rep(id, j), c, lf }
             j = j + 1
         elseif not q and (c == "}" or c == "]") then
