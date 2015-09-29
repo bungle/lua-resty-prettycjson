@@ -1,7 +1,7 @@
-local gmatch = string.gmatch
 local concat = table.concat
 local sub = string.sub
 local rep = string.rep
+local len = string.len
 local json = require "cjson.safe".encode
 
 return function(tbl, lf, id, ac)
@@ -10,7 +10,9 @@ return function(tbl, lf, id, ac)
     lf, id, ac = lf or "\n", id or "\t", ac or " "
     local i, j, k, r, p  = 1, 0, 0, {}, nil
     local al = sub(ac, -1) == "\n"
-    for c in gmatch(s, ".") do
+    local n = len(s)
+    for x = 1, n do
+        local c = sub(s, x, x)
         if c == "{" or c == "[" then
             r[i] = p == ":" and concat{ c, lf } or concat{ rep(id, j), c, lf }
             j = j + 1
