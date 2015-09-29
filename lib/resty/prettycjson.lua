@@ -6,9 +6,8 @@ return function(tbl, lf, id, ac)
     local s, e = json(tbl)
     if not s then return s, e end
     lf, id, ac = lf or "\n", id or "\t", ac or " "
-    local i, j, k, r, p, q  = 1, 0, 0, {}, nil, nil
+    local i, j, k, n, r, p, q  = 1, 0, 0, #s, {}, nil, nil
     local al = sub(ac, -1) == "\n"
-    local n = #s
     for x = 1, n do
         local c = sub(s, x, x)
         if not q and (c == "{" or c == "[") then
