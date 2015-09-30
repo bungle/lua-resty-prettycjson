@@ -2,8 +2,8 @@ local enc = require "cjson.safe".encode
 local cat = table.concat
 local sub = string.sub
 local rep = string.rep
-return function(tb, lf, id, ac)
-    local s, e = enc(tb)
+return function(dt, lf, id, ac)
+    local s, e = enc(dt)
     if not s then return s, e end
     lf, id, ac = lf or "\n", id or "\t", ac or " "
     local i, j, k, n, r, p, q  = 1, 0, 0, #s, {}, nil, nil
