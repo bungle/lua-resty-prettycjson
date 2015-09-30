@@ -31,14 +31,8 @@ return function(tb, lf, id, ac)
                 r[i] = rep(id, j)
             end
         else
-            if c == '"' or c == "'" then
-                if p ~= "\\" then
-                    if q == c then
-                        q = nil
-                    elseif not q then
-                        q = c
-                    end
-                end
+            if c == '"' and p ~= "\\" then
+                q = not q and true or nil
             end
             if j ~= k then
                 r[i] = rep(id, j)
