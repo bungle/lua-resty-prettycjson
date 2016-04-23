@@ -40,7 +40,8 @@ message, such as:
 nil, "Cannot serialise function: type not supported"
 ```
 
-For input argument `dt` it accepts anything that `cjson.encode` accepts.
+For input argument `dt` it accepts anything that `cjson.encode` accepts (or whatever the custom encoding
+function accepts).
 
 ##### Example
 
