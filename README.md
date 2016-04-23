@@ -26,14 +26,15 @@ $ moonrocks install lua-resty-prettycjson
 MoonRocks repository for `lua-resty-prettycjson`  is located here: https://rocks.moonscript.org/modules/bungle/lua-resty-prettycjson.
 
 ## Lua API
-#### string function(dt, [lf = "\n", [id = "\t", [ac = " ", [enc = function]]]])
+#### string function(dt, [lf = "\n", [id = "\t", [ac = " ", [ec = function]]]])
 
 Pretty formats the JSON output. You may pass `lf` (line feed) if you want to use different linefeed
 than the default `\n`. If you want to indent (` id` argument) with something else than `\t` (a tab)
 you can pass that as arguments as well. And if you want to have something else than ` ` (single space) after
 colons `:` (`ac` argument) in json, you can change that as well, try for example `\n`. If you'd like to use
-an encoder other than cJSON, pass the encoding function as the 5th argument.
-If there is a problem with encoding this function will return `nil` and an error message, such as:
+an encoder other than cJSON, pass the encoding function as the 5th argument. It should accept anything as
+input parameter, and ff there is a problem with encoding this function should return `nil` and an error
+message, such as:
 
 ```lua
 nil, "Cannot serialise function: type not supported"
@@ -129,7 +130,7 @@ That will output:
 `lua-resty-prettycjson` uses three clause BSD license.
 
 ```
-Copyright (c) 2015, Aapo Talvensaari
+Copyright (c) 2015 — 2016, Aapo Talvensaari
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

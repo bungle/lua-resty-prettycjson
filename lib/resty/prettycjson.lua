@@ -1,10 +1,9 @@
+local enc = require "cjson.safe".encode
 local cat = table.concat
 local sub = string.sub
 local rep = string.rep
-return function(dt, lf, id, ac, enc)
-    -- minor adjustment - allows use of a custom JSON encode function
-    local enc = enc or require "cjson.safe".encode
-    local s, e = enc(dt)
+return function(dt, lf, id, ac, ec)
+    local s, e = (ec or enc)(dt)
     if not s then return s, e end
     lf, id, ac = lf or "\n", id or "\t", ac or " "
     local i, j, k, n, r, p, q  = 1, 0, 0, #s, {}, nil, nil
