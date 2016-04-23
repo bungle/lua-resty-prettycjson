@@ -1,3 +1,7 @@
+Changes with lua-resty-prettycjson 1.5                             23 Apr 2016
+
+    *) Bugfix: Now works even if Lua cJSON is not available.
+
 Changes with lua-resty-prettycjson 1.4                             23 Apr 2016
 
     *) Feature: Allow custom encoding function.

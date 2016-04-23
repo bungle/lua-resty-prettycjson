@@ -1,4 +1,5 @@
-local enc = require "cjson.safe".encode
+local ok, cjson = pcall(require, "cjson.safe")
+local enc = ok and cjson.encode or function() return nil, "Lua cJSON encoder not found" end
 local cat = table.concat
 local sub = string.sub
 local rep = string.rep
