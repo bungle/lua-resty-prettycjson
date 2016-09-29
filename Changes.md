@@ -10,7 +10,7 @@ All notable changes to `lua-resty-prettycjson` will be documented in this file.
 - Changed the change log format to keep-a-changelog.
 
 ## [1.5] - 2016-03-23
-### Fixes
+### Fixed
 - Now works even if Lua cJSON is not available.
 
 ## [1.4] - 2016-04-23
