@@ -1,4 +1,4 @@
-# Change Log
+# Changelog
 
 All notable changes to `lua-resty-prettycjson` will be documented in this file.
 
