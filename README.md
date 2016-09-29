@@ -8,6 +8,12 @@ Just place [`prettycjson.lua`](https://github.com/bungle/lua-resty-prettycjson/b
 somewhere in your `package.path`, preferably under `resty` directory. If you are using OpenResty, the default location
 would be `/usr/local/openresty/lualib/resty`.
 
+### Using OpenResty Package Manager (opm)
+
+```Shell
+$ opm get bungle/lua-resty-prettycjson
+```
+
 ### Using LuaRocks or MoonRocks
 
 If you are using LuaRocks >= 2.2:
@@ -125,6 +131,10 @@ That will output:
 	]
 }
 ```
+
+## Changes
+
+The changes of every release of this module is recorded in [Changes.md](https://github.com/bungle/lua-resty-prettycjson/blob/master/Changes.md) file.
 
 ## License
 
