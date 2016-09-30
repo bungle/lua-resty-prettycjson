@@ -5,7 +5,7 @@
 ## Installation
 
 Just place [`prettycjson.lua`](https://github.com/bungle/lua-resty-prettycjson/blob/master/lib/resty/prettycjson.lua)
-somewhere in your `package.path`, preferably under `resty` directory. If you are using OpenResty, the default location
+somewhere in your `package.path`, under `resty` directory. If you are using OpenResty, the default location
 would be `/usr/local/openresty/lualib/resty`.
 
 ### Using OpenResty Package Manager (opm)
@@ -14,22 +14,13 @@ would be `/usr/local/openresty/lualib/resty`.
 $ opm get bungle/lua-resty-prettycjson
 ```
 
-### Using LuaRocks or MoonRocks
-
-If you are using LuaRocks >= 2.2:
+### Using LuaRocks
 
 ```Shell
 $ luarocks install lua-resty-prettycjson
 ```
 
-If you are using LuaRocks < 2.2:
-
-```Shell
-$ luarocks install --server=http://rocks.moonscript.org moonrocks
-$ moonrocks install lua-resty-prettycjson
-```
-
-MoonRocks repository for `lua-resty-prettycjson`  is located here: https://rocks.moonscript.org/modules/bungle/lua-resty-prettycjson.
+LuaRocks repository for `lua-resty-prettycjson` is located at https://luarocks.org/modules/bungle/lua-resty-prettycjson.
 
 ## Lua API
 #### string function(dt, [lf = "\n", [id = "\t", [ac = " ", [ec = function]]]])
